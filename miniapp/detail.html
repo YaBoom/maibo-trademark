@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN" class="light">
 <head>
     <meta charset="UTF-8">
@@ -170,9 +170,9 @@
 
           <!-- 2. Top Nav Bar (sticky) -->
           <div style="position: sticky; top: 0; z-index: 50; background: var(--color-white); border-bottom: 1px solid var(--color-gray-100); display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; height: 44px;">
-            <a href="market.html" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; text-decoration:none; color:inherit;">
+            <a data-dom-id="btn-back" href="market.html" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
               <i data-lucide="chevron-left" style="width: 22px; height: 22px; color: var(--color-gray-800);"></i>
-            </div>
+            </a>
             <span style="font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-gray-900);">商标详情</span>
             <div style="display: flex; align-items: center; gap: 12px;">
               <div style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
@@ -348,23 +348,23 @@
             </div>
             <div class="no-scrollbar" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px;">
               <!-- Card 1 -->
-              <a href="detail.html" style="flex-shrink: 0; width: 140px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: 12px; text-decoration:none; color:inherit; display:block;">
+              <a data-dom-id="similar-1" href="detail.html" style="flex-shrink: 0; width: 140px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: 12px; cursor: pointer;">
                 <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, #F59E0B, #D97706); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
                   <span style="font-size: 22px; font-weight: var(--weight-bold); color: white;">驼</span>
                 </div>
                 <div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-gray-800); margin-bottom: 4px;">驼典</div>
                 <div style="font-size: var(--text-xs); color: var(--color-gray-400); margin-bottom: 6px;">09类</div>
                 <div style="font-size: var(--text-sm); font-weight: var(--weight-bold); color: var(--color-accent);">¥8,200</div>
-              </div>
+              </a>
               <!-- Card 2 -->
-              <a href="detail.html" style="flex-shrink: 0; width: 140px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: 12px; text-decoration:none; color:inherit; display:block;">
+              <a data-dom-id="similar-2" href="detail.html" style="flex-shrink: 0; width: 140px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: 12px; cursor: pointer;">
                 <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, #8B5CF6, #7C3AED); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
                   <span style="font-size: 22px; font-weight: var(--weight-bold); color: white;">典</span>
                 </div>
                 <div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-gray-800); margin-bottom: 4px;">典驼</div>
                 <div style="font-size: var(--text-xs); color: var(--color-gray-400); margin-bottom: 6px;">09类</div>
                 <div style="font-size: var(--text-sm); font-weight: var(--weight-bold); color: var(--color-accent);">¥6,800</div>
-              </div>
+              </a>
               <!-- Card 3 -->
               <div style="flex-shrink: 0; width: 140px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg); padding: 12px; cursor: pointer;">
                 <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)); display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
@@ -392,12 +392,12 @@
             <span style="font-size: 10px; color: var(--color-gray-500);">收藏</span>
           </div>
           <!-- Consult button -->
-          <a href="#" style="width: 80px; display: flex; flex-direction: column; align-items: center; gap: 2px; flex-shrink: 0; text-decoration:none; color:inherit;">
+          <a data-dom-id="btn-consult" href="#" style="width: 80px; display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; flex-shrink: 0;">
             <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
               <i data-lucide="message-circle" style="width: 18px; height: 18px; color: var(--color-gray-600);"></i>
             </div>
             <span style="font-size: 10px; color: var(--color-gray-500);">咨询顾问</span>
-          </div>
+          </a>
           <!-- Buy button -->
           <div style="flex: 1; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(46, 107, 255, 0.3);">
             <span style="font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-white); letter-spacing: 1px;">立即购买</span>
@@ -406,14 +406,14 @@
 
         <!-- 10. Bottom Tab Bar (fixed) -->
         <div style="position: absolute; bottom: 0; left: 0; right: 0; height: var(--tab-bar-height); background: var(--color-white); border-top: 1px solid var(--color-gray-200); display: flex; align-items: center; justify-content: space-around; z-index: 50; padding-bottom: env(safe-area-inset-bottom, 0px);">
-          <a href="home.html" style="display:flex; flex-direction:column; align-items:center; gap:2px; padding:4px 12px; text-decoration:none; color:inherit;">
+          <a data-dom-id="tab-home" href="home.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 4px 12px;">
             <i data-lucide="home" style="width: 20px; height: 20px; color: var(--color-gray-400);"></i>
             <span style="font-size: 10px; color: var(--color-gray-400);">首页</span>
-          </div>
-          <div data-dom-id="tab-market" style="display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 4px 12px;">
+          </a>
+          <a data-dom-id="tab-market" href="market.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 4px 12px;">
             <i data-lucide="store" style="width: 20px; height: 20px; color: var(--color-primary);"></i>
             <span style="font-size: 10px; color: var(--color-primary); font-weight: var(--weight-medium);">商标市场</span>
-          </div>
+          </a>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; padding: 4px 12px;">
             <i data-lucide="wand-2" style="width: 20px; height: 20px; color: var(--color-gray-400);"></i>
             <span style="font-size: 10px; color: var(--color-gray-400);">AI选标</span>

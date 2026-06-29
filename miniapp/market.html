@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN" class="light">
 <head>
     <meta charset="UTF-8">
@@ -236,7 +236,7 @@
           <div class="grid grid-cols-2 gap-2 px-3 pt-2" style="background: var(--color-gray-50);">
 
             <!-- Card 1 -->
-            <a href="detail.html" class="flex flex-col" style="text-decoration:none; color:inherit; display:flex; background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+            <a data-dom-id="card-1" href="detail.html" class="flex flex-col" style="text-decoration:none; color:inherit; background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
               <div class="flex justify-center pt-3 pb-2">
                 <div class="flex items-center justify-center" style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #5989FF, #2E6BFF);">
                   <span style="font-size: 26px; font-weight: var(--weight-bold); color: var(--color-white);">驼</span>
@@ -255,10 +255,10 @@
                 <span style="font-size: var(--text-base); font-weight: var(--weight-bold); color: #EF4444;">&#165;7,400</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               </div>
-            </div>
+            </a>
 
             <!-- Card 2 -->
-            <a href="detail.html" class="flex flex-col" style="text-decoration:none; color:inherit; display:flex; background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
+            <a data-dom-id="card-2" href="detail.html" class="flex flex-col" style="text-decoration:none; color:inherit; background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
               <div class="flex justify-center pt-3 pb-2">
                 <div class="flex items-center justify-center" style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, #6AD9BA, #00C9A7);">
                   <span style="font-size: 26px; font-weight: var(--weight-bold); color: var(--color-white);">兽</span>
@@ -277,7 +277,7 @@
                 <span style="font-size: var(--text-base); font-weight: var(--weight-bold); color: #EF4444;">&#165;7,400</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               </div>
-            </div>
+            </a>
 
             <!-- Card 3 -->
             <div class="flex flex-col" style="background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden;">
@@ -371,7 +371,7 @@
         <!-- Bottom Tab Bar (fixed) -->
         <div class="absolute bottom-0 left-0 right-0 flex items-start justify-around pt-1.5" style="height: calc(var(--tab-bar-height) + var(--safe-bottom)); padding-bottom: var(--safe-bottom); background: var(--color-white); border-top: 1px solid var(--color-gray-200); box-shadow: 0 -1px 8px rgba(0,0,0,0.04);">
           <!-- Tab: 首页 -->
-          <a href="home.html" class="tab-item active" style="text-decoration:none; color:var(--color-primary); display:flex; flex-direction:column; align-items:center; gap:2px; padding:4px 12px;">
+          <a data-dom-id="tab-home" href="home.html" class="flex flex-col items-center gap-0.5" style="width: 60px;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-400)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span style="font-size: 10px; color: var(--color-gray-400);">首页</span>
           </a>
