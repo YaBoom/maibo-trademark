@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商标详情 - 脉搏跳动商标超市</title>
+    <style id="theme-vars">
+:root {
+  /* ── Brand Palette ── */
+  --color-primary: #2E6BFF;
+  --color-primary-hover: #1A56E0;
+  --color-primary-light: #E8F0FE;
+  --color-primary-subtle: #F0F5FF;
+
+  --color-secondary: #00C9A7;
+  --color-secondary-hover: #00B396;
+  --color-secondary-light: #E0FAF4;
+
+  --color-accent: #FF6B35;
+  --color-accent-hover: #E55A28;
+  --color-accent-light: #FFF0E8;
+
+  /* ── Tint Scales (Primary) ── */
+  --color-primary-50: #EFF4FF;
+  --color-primary-100: #D9E5FF;
+  --color-primary-200: #BCCCFF;
+  --color-primary-300: #8EAFFF;
+  --color-primary-400: #5989FF;
+  --color-primary-500: #2E6BFF;
+  --color-primary-600: #1A56E0;
+  --color-primary-700: #1344B8;
+  --color-primary-800: #0F3690;
+  --color-primary-900: #0B255F;
+
+  /* ── Tint Scales (Secondary/Teal) ── */
+  --color-teal-50: #EEFBF6;
+  --color-teal-100: #D0F5E8;
+  --color-teal-200: #A4EAD4;
+  --color-teal-300: #6AD9BA;
+  --color-teal-400: #00C9A7;
+  --color-teal-500: #00B396;
+  --color-teal-600: #009A7F;
+  --color-teal-700: #007D67;
+  --color-teal-800: #006454;
+  --color-teal-900: #004D40;
+
+  /* ── Neutrals ── */
+  --color-white: #FFFFFF;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+
+  /* ── Semantic (State) ── */
+  --state-success: #10B981;
+  --state-warning: #F59E0B;
+  --state-error: #EF4444;
+  --state-info: #3B82F6;
+
+  /* ── Semantic (Background) ── */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-tertiary: var(--color-gray-100);
+  --bg-elevated: var(--color-white);
+  --bg-brand: var(--color-primary);
+  --bg-brand-light: var(--color-primary-light);
+
+  /* ── Semantic (Foreground) ── */
+  --fg-primary: var(--color-gray-900);
+  --fg-secondary: var(--color-gray-600);
+  --fg-tertiary: var(--color-gray-400);
+  --fg-inverse: var(--color-white);
+  --fg-brand: var(--color-primary);
+  --fg-on-brand: var(--color-white);
+
+  /* ── Semantic (Border) ── */
+  --border-default: var(--color-gray-200);
+  --border-subtle: var(--color-gray-100);
+  --border-strong: var(--color-gray-300);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ── Radius Scale ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ── Spacing Scale ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Shadows (static alpha <= 0.05; floating layers may exceed) ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Container ── */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  --color-primary: #5B93FF;
+  --color-primary-hover: #7AAFFF;
+  --color-primary-light: #1E2E4A;
+  --color-primary-subtle: #162240;
+
+  --color-secondary: #2EE0BE;
+  --color-secondary-hover: #50EBD0;
+
+  --color-accent: #FF8A5C;
+
+  --bg-primary: #0F1729;
+  --bg-secondary: #162240;
+  --bg-tertiary: #1E2E4A;
+  --bg-elevated: #1A2640;
+  --bg-brand-light: #1E2E4A;
+
+  --fg-primary: #F1F5F9;
+  --fg-secondary: #94A3B8;
+  --fg-tertiary: #64748B;
+  --fg-inverse: #0F1729;
+  --fg-brand: #5B93FF;
+  --fg-on-brand: #FFFFFF;
+
+  --border-default: #2D3B55;
+  --border-subtle: #1E2E4A;
+  --border-strong: #3D4F6F;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-primary: var(--color-primary);
+    --color-secondary: var(--color-secondary);
+    --color-accent: var(--color-accent);
+  }
+  @layer base {
+    body { background: var(--color-background); color: var(--color-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main class="pb-20 md:pb-0">
+        <!-- ========== STICKY NAV ========== -->
+        <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[var(--border-default)]">
+            <div class="max-w-[var(--container-max)] mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 shrink-0">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-extrabold text-sm" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));">MB</div>
+                    <span class="text-base font-bold tracking-tight text-[var(--fg-primary)] hidden sm:inline">脉搏跳动商标超市</span>
+                </a>
+                <!-- Nav Links -->
+                <div class="flex items-center gap-6 text-sm font-medium">
+                    <a href="#" data-dom-id="nav-home" class="text-[var(--fg-secondary)] hover:text-[var(--color-primary)] transition-colors hidden md:inline">首页</a>
+                    <a href="#" data-dom-id="nav-market" class="text-[var(--color-primary)] font-semibold">商标市场</a>
+                    <a href="#" class="text-[var(--fg-secondary)] hover:text-[var(--color-primary)] transition-colors hidden md:inline">九宫格工具</a>
+                </div>
+                <!-- CTA -->
+                <a href="#" class="shrink-0 inline-flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:shadow-lg" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));">
+                    <i data-lucide="scan-line" class="w-4 h-4"></i>
+                    微信登录
+                </a>
+            </div>
+        </nav>
+
+        <!-- ========== BREADCRUMB ========== -->
+        <div class="max-w-[var(--container-max)] mx-auto px-4 lg:px-8 pt-4 pb-2">
+            <div class="flex items-center gap-2 text-sm">
+                <a href="#" data-dom-id="back-market" class="inline-flex items-center gap-1 text-[var(--fg-secondary)] hover:text-[var(--color-primary)] transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>返回列表</span>
+                </a>
+                <span class="text-[var(--fg-tertiary)]">/</span>
+                <span class="text-[var(--fg-tertiary)]">首页</span>
+                <span class="text-[var(--fg-tertiary)]">></span>
+                <span class="text-[var(--fg-tertiary)]">商标市场</span>
+                <span class="text-[var(--fg-tertiary)]">></span>
+                <span class="text-[var(--fg-primary)] font-medium">驼典</span>
+            </div>
+        </div>
+
+        <!-- ========== TRADEMARK HERO ========== -->
+        <section class="max-w-[var(--container-max)] mx-auto px-4 lg:px-8 py-6 lg:py-10">
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-12">
+                <!-- LEFT: Logo Card -->
+                <div class="md:w-[40%] shrink-0">
+                    <div class="bg-[var(--bg-secondary)] rounded-2xl p-6 lg:p-10 flex flex-col items-center shadow-md">
+                        <!-- Trademark Logo -->
+                        <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-full flex items-center justify-center mb-6 shadow-lg" style="background: linear-gradient(135deg, #F6D365 0%, #FDA085 50%, #F6D365 100%);">
+                            <span class="text-6xl lg:text-7xl font-extrabold text-gray-900 select-none" style="font-family: var(--font-display);">驼</span>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-4">
+                            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border-default)] bg-white text-sm font-medium text-[var(--fg-secondary)] hover:text-red-500 hover:border-red-300 transition-all">
+                                <i data-lucide="heart" class="w-4 h-4"></i>
+                                收藏
+                            </button>
+                            <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border-default)] bg-white text-sm font-medium text-[var(--fg-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary-300)] transition-all">
+                                <i data-lucide="share-2" class="w-4 h-4"></i>
+                                分享
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Info -->
+                <div class="md:w-[60%] flex flex-col justify-center">
+                    <!-- Title & Badges -->
+                    <h1 class="text-3xl lg:text-4xl font-extrabold text-[var(--fg-primary)] mb-4" style="font-family: var(--font-display);">驼典</h1>
+                    <div class="flex flex-wrap items-center gap-3 mb-6">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-tertiary)] text-xs font-mono font-medium text-[var(--fg-secondary)]">
+                            <i data-lucide="hash" class="w-3 h-3"></i>
+                            注册号: 71234567
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-white" style="background: var(--state-success);">
+                            <i data-lucide="check-circle" class="w-3 h-3"></i>
+                            可转让
+                        </span>
+                    </div>
+
+                    <!-- Key Info Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-[var(--bg-secondary)] rounded-xl p-4 border border-[var(--border-subtle)]">
+                            <div class="text-xs text-[var(--fg-tertiary)] mb-1">商标类别</div>
+                            <div class="text-sm font-semibold text-[var(--fg-primary)]">09类 电子电器</div>
+                        </div>
+                        <div class="bg-[var(--bg-secondary)] rounded-xl p-4 border border-[var(--border-subtle)]">
+                            <div class="text-xs text-[var(--fg-tertiary)] mb-1">小项数量</div>
+                            <div class="text-sm font-semibold text-[var(--fg-primary)]">10个小项</div>
+                        </div>
+                        <div class="bg-[var(--bg-secondary)] rounded-xl p-4 border border-[var(--border-subtle)]">
+                            <div class="text-xs text-[var(--fg-tertiary)] mb-1">同名类别</div>
+                            <div class="text-sm font-semibold text-[var(--fg-primary)]">同名1类</div>
+                        </div>
+                        <div class="bg-[var(--bg-secondary)] rounded-xl p-4 border border-[var(--border-subtle)]">
+                            <div class="text-xs text-[var(--fg-tertiary)] mb-1">参考价格</div>
+                            <div class="text-xl font-extrabold" style="color: var(--color-accent);">¥7,400</div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full text-white font-semibold text-base transition-all hover:shadow-xl hover:scale-[1.02]" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            立即咨询
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-base transition-all hover:bg-[var(--bg-secondary)]" style="border-color: var(--color-primary); color: var(--color-primary);">
+                            <i data-lucide="git-compare" class="w-5 h-5"></i>
+                            加入对比
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TABS SECTION ========== -->
+        <section class="max-w-[var(--container-max)] mx-auto px-4 lg:px-8 pb-8">
+            <!-- Tab Navigation -->
+            <div class="flex items-center gap-1 border-b border-[var(--border-default)] mb-6 overflow-x-auto no-scrollbar">
+                <button class="tab-btn px-5 py-3 text-sm font-semibold whitespace-nowrap transition-colors border-b-2 -mb-[1px]" style="color: var(--color-primary); border-color: var(--color-primary);" data-tab="info">商标信息</button>
+                <button class="tab-btn px-5 py-3 text-sm font-medium whitespace-nowrap transition-colors border-b-2 border-transparent -mb-[1px] text-[var(--fg-secondary)] hover:text-[var(--fg-primary)]" data-tab="items">商品/服务项目</button>
+                <button class="tab-btn px-5 py-3 text-sm font-medium whitespace-nowrap transition-colors border-b-2 border-transparent -mb-[1px] text-[var(--fg-secondary)] hover:text-[var(--fg-primary)]" data-tab="process">流程说明</button>
+            </div>
+
+            <!-- TAB 1: 商标信息 (Active) -->
+            <div id="tab-info" class="tab-content">
+                <!-- 基本信息 -->
+                <div class="bg-white rounded-2xl border border-[var(--border-default)] shadow-sm mb-6">
+                    <div class="px-6 py-4 border-b border-[var(--border-subtle)]">
+                        <h2 class="text-lg font-bold text-[var(--fg-primary)]">基本信息</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">商标名称</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">驼典</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">注册号</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)] font-mono">71234567</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">国际分类</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">第9类</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">类似群组</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">0901, 0907, 0908</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">申请日期</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">2023-06-15</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">注册日期</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">2024-03-14</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">有效期至</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">2034-03-13</span>
+                            </div>
+                            <div class="flex items-start gap-3 py-2">
+                                <span class="text-sm text-[var(--fg-tertiary)] w-20 shrink-0">申请人</span>
+                                <span class="text-sm font-semibold text-[var(--fg-primary)]">武汉某某科技有限公司</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI 智能评价 -->
+                <div class="relative rounded-2xl p-[2px] mb-6" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary), var(--color-accent));">
+                    <div class="bg-white rounded-2xl p-6 lg:p-8">
+                        <div class="flex items-center gap-2 mb-5">
+                            <i data-lucide="sparkles" class="w-5 h-5" style="color: var(--color-secondary);"></i>
+                            <h2 class="text-lg font-bold text-[var(--fg-primary)]">AI 智能评价</h2>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-start gap-6">
+                            <!-- Score -->
+                            <div class="flex flex-col items-center justify-center shrink-0 bg-[var(--bg-secondary)] rounded-2xl px-8 py-6">
+                                <div class="text-5xl font-extrabold" style="color: var(--color-secondary);">92<span class="text-2xl font-bold ml-1">分</span></div>
+                                <div class="text-xs text-[var(--fg-tertiary)] mt-1">综合评分</div>
+                            </div>
+                            <!-- Details -->
+                            <div class="flex-1">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-white" style="background: var(--color-secondary);">
+                                        <i data-lucide="check" class="w-3 h-3"></i> 易记性高
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-white" style="background: var(--color-primary);">
+                                        <i data-lucide="check" class="w-3 h-3"></i> 行业匹配度好
+                                    </span>
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-white" style="background: var(--color-accent);">
+                                        <i data-lucide="check" class="w-3 h-3"></i> 传播力强
+                                    </span>
+                                </div>
+                                <p class="text-sm leading-relaxed text-[var(--fg-secondary)]">
+                                    "驼典"二字组合具有强烈的品牌辨识度，"驼"字蕴含稳健、持久的行业形象，与09类电子电器产品中追求可靠性、耐久性的用户诉求高度契合。"典"字赋予品牌高端、经典的调性，整体商标名称朗朗上口，易于传播与记忆，具备较高的商业价值与市场推广潜力。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: 商品/服务项目 -->
+            <div id="tab-items" class="tab-content hidden">
+                <div class="bg-white rounded-2xl border border-[var(--border-default)] shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-[var(--bg-secondary)] border-b border-[var(--border-default)]">
+                                    <th class="text-left px-6 py-3 font-semibold text-[var(--fg-secondary)]">序号</th>
+                                    <th class="text-left px-6 py-3 font-semibold text-[var(--fg-secondary)]">商品/服务项目</th>
+                                    <th class="text-left px-6 py-3 font-semibold text-[var(--fg-secondary)]">类似群组</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[var(--border-subtle)]">
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">1</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">计算机程序（可下载软件）</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0901</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">2</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">可下载的电子出版物</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0901</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">3</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">电子数据处理设备</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0901</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">4</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">计算机网络设备</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0907</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">5</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">网络通讯设备</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0907</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">6</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">卫星导航仪器</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0907</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">7</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">音频视频接收器</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0908</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">8</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">扬声器音箱</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0908</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">9</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">智能手表（数据处理）</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0901</td>
+                                </tr>
+                                <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+                                    <td class="px-6 py-3 text-[var(--fg-tertiary)] font-mono text-center">10</td>
+                                    <td class="px-6 py-3 text-[var(--fg-primary)] font-medium">可穿戴智能设备</td>
+                                    <td class="px-6 py-3 text-[var(--fg-secondary)] font-mono">0901</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: 流程说明 -->
+            <div id="tab-process" class="tab-content hidden">
+                <div class="bg-white rounded-2xl border border-[var(--border-default)] shadow-sm p-6 lg:p-8">
+                    <h2 class="text-lg font-bold text-[var(--fg-primary)] mb-6">商标转让流程</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background: var(--color-primary);">1</div>
+                            <div>
+                                <h3 class="font-semibold text-[var(--fg-primary)] mb-1">确认商标信息</h3>
+                                <p class="text-sm text-[var(--fg-secondary)]">核实商标注册状态、有效期、类别等核心信息，确保商标可合法转让。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background: var(--color-primary);">2</div>
+                            <div>
+                                <h3 class="font-semibold text-[var(--fg-primary)] mb-1">签署转让协议</h3>
+                                <p class="text-sm text-[var(--fg-secondary)]">买卖双方签署商标转让协议，明确转让价格、权利范围及违约责任。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background: var(--color-primary);">3</div>
+                            <div>
+                                <h3 class="font-semibold text-[var(--fg-primary)] mb-1">提交转让申请</h3>
+                                <p class="text-sm text-[var(--fg-secondary)]">向国家知识产权局商标局提交转让申请材料，等待审核。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm" style="background: var(--color-primary);">4</div>
+                            <div>
+                                <h3 class="font-semibold text-[var(--fg-primary)] mb-1">核准公告</h3>
+                                <p class="text-sm text-[var(--fg-secondary)]">商标局核准转让并公告，受让人取得商标专用权，转让完成。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BOTTOM CTA (mobile sticky / desktop section) ========== -->
+        <section class="hidden md:block max-w-[var(--container-max)] mx-auto px-4 lg:px-8 pb-12">
+            <div class="bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-subtle)] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-baseline gap-3">
+                    <span class="text-sm text-[var(--fg-tertiary)]">参考价格</span>
+                    <span class="text-3xl font-extrabold" style="color: var(--color-accent);">¥7,400</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full text-white font-semibold text-base transition-all hover:shadow-xl hover:scale-[1.02]" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        立即咨询
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 font-semibold text-base transition-all hover:bg-[var(--bg-tertiary)]" style="border-color: var(--color-primary); color: var(--color-primary);">
+                        <i data-lucide="git-compare" class="w-5 h-5"></i>
+                        添加到对比
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Sticky Bottom Bar -->
+        <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[var(--border-default)] px-4 py-3 flex items-center justify-between shadow-xl">
+            <div class="flex items-baseline gap-2">
+                <span class="text-2xl font-extrabold" style="color: var(--color-accent);">¥7,400</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#" class="inline-flex items-center justify-center px-4 py-2.5 rounded-full border text-sm font-semibold transition-all" style="border-color: var(--color-primary); color: var(--color-primary);">
+                    <i data-lucide="git-compare" class="w-4 h-4 mr-1"></i>
+                    对比
+                </a>
+                <a href="#" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:shadow-lg" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));">
+                    <i data-lucide="message-circle" class="w-4 h-4 mr-1"></i>
+                    立即咨询
+                </a>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="bg-[var(--color-gray-900)] text-[var(--color-gray-300)] mt-12">
+            <div class="max-w-[var(--container-max)] mx-auto px-4 lg:px-8 py-12 lg:py-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h3 class="text-white font-bold text-sm mb-4">平台服务</h3>
+                        <ul class="space-y-2.5 text-sm">
+                            <li><a href="#" data-dom-id="footer-home" class="hover:text-white transition-colors">首页</a></li>
+                            <li><a href="#" data-dom-id="footer-market" class="hover:text-white transition-colors">商标市场</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">商标转让</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">商标注册</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 -->
+                    <div>
+                        <h3 class="text-white font-bold text-sm mb-4">商标工具</h3>
+                        <ul class="space-y-2.5 text-sm">
+                            <li><a href="#" class="hover:text-white transition-colors">九宫格起名</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">商标查询</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">AI 智能评价</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">商标对比</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 3 -->
+                    <div>
+                        <h3 class="text-white font-bold text-sm mb-4">关注我们</h3>
+                        <div class="space-y-3">
+                            <div class="w-24 h-24 bg-white rounded-lg flex items-center justify-center">
+                                <div class="text-center">
+                                    <i data-lucide="qr-code" class="w-10 h-10 text-gray-800 mx-auto"></i>
+                                    <span class="text-[10px] text-gray-600 mt-1 block">微信公众号</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column 4 -->
+                    <div>
+                        <h3 class="text-white font-bold text-sm mb-4">联系我们</h3>
+                        <ul class="space-y-2.5 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 400-888-9999</li>
+                            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> service@maibo.com</li>
+                            <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i> 周一至周五 9:00-18:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Bottom Bar -->
+                <div class="mt-10 pt-6 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-[10px]" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));">MB</div>
+                        <span>脉搏跳动商标超市</span>
+                    </div>
+                    <div class="text-center">Copyright &copy; 2024 脉搏跳动商标超市 版权所有</div>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="hover:text-gray-300 transition-colors">鄂ICP备XXXXXXXX号</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">隐私政策</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+    // Tab switching logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+
+                // Update button styles
+                tabBtns.forEach(b => {
+                    b.classList.remove('font-semibold');
+                    b.classList.add('font-medium', 'text-[var(--fg-secondary)]');
+                    b.style.color = '';
+                    b.style.borderColor = 'transparent';
+                });
+                this.classList.remove('font-medium', 'text-[var(--fg-secondary)]');
+                this.classList.add('font-semibold');
+                this.style.color = 'var(--color-primary)';
+                this.style.borderColor = 'var(--color-primary)';
+
+                // Show/hide content
+                tabContents.forEach(content => {
+                    if (content.id === 'tab-' + targetTab) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+    </script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

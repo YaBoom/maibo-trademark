@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商标市场 - 脉搏跳动商标超市</title>
+    <style id="theme-vars">
+:root {
+  /* ── Brand Palette ── */
+  --color-primary: #2E6BFF;
+  --color-primary-hover: #1A56E0;
+  --color-primary-light: #E8F0FE;
+  --color-primary-subtle: #F0F5FF;
+
+  --color-secondary: #00C9A7;
+  --color-secondary-hover: #00B396;
+  --color-secondary-light: #E0FAF4;
+
+  --color-accent: #FF6B35;
+  --color-accent-hover: #E55A28;
+  --color-accent-light: #FFF0E8;
+
+  /* ── Tint Scales (Primary) ── */
+  --color-primary-50: #EFF4FF;
+  --color-primary-100: #D9E5FF;
+  --color-primary-200: #BCCCFF;
+  --color-primary-300: #8EAFFF;
+  --color-primary-400: #5989FF;
+  --color-primary-500: #2E6BFF;
+  --color-primary-600: #1A56E0;
+  --color-primary-700: #1344B8;
+  --color-primary-800: #0F3690;
+  --color-primary-900: #0B255F;
+
+  /* ── Tint Scales (Secondary/Teal) ── */
+  --color-teal-50: #EEFBF6;
+  --color-teal-100: #D0F5E8;
+  --color-teal-200: #A4EAD4;
+  --color-teal-300: #6AD9BA;
+  --color-teal-400: #00C9A7;
+  --color-teal-500: #00B396;
+  --color-teal-600: #009A7F;
+  --color-teal-700: #007D67;
+  --color-teal-800: #006454;
+  --color-teal-900: #004D40;
+
+  /* ── Neutrals ── */
+  --color-white: #FFFFFF;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+
+  /* ── Semantic (State) ── */
+  --state-success: #10B981;
+  --state-warning: #F59E0B;
+  --state-error: #EF4444;
+  --state-info: #3B82F6;
+
+  /* ── Semantic (Background) ── */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-tertiary: var(--color-gray-100);
+  --bg-elevated: var(--color-white);
+  --bg-brand: var(--color-primary);
+  --bg-brand-light: var(--color-primary-light);
+
+  /* ── Semantic (Foreground) ── */
+  --fg-primary: var(--color-gray-900);
+  --fg-secondary: var(--color-gray-600);
+  --fg-tertiary: var(--color-gray-400);
+  --fg-inverse: var(--color-white);
+  --fg-brand: var(--color-primary);
+  --fg-on-brand: var(--color-white);
+
+  /* ── Semantic (Border) ── */
+  --border-default: var(--color-gray-200);
+  --border-subtle: var(--color-gray-100);
+  --border-strong: var(--color-gray-300);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ── Radius Scale ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ── Spacing Scale ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Shadows (static alpha <= 0.05; floating layers may exceed) ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Container ── */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  --color-primary: #5B93FF;
+  --color-primary-hover: #7AAFFF;
+  --color-primary-light: #1E2E4A;
+  --color-primary-subtle: #162240;
+
+  --color-secondary: #2EE0BE;
+  --color-secondary-hover: #50EBD0;
+
+  --color-accent: #FF8A5C;
+
+  --bg-primary: #0F1729;
+  --bg-secondary: #162240;
+  --bg-tertiary: #1E2E4A;
+  --bg-elevated: #1A2640;
+  --bg-brand-light: #1E2E4A;
+
+  --fg-primary: #F1F5F9;
+  --fg-secondary: #94A3B8;
+  --fg-tertiary: #64748B;
+  --fg-inverse: #0F1729;
+  --fg-brand: #5B93FF;
+  --fg-on-brand: #FFFFFF;
+
+  --border-default: #2D3B55;
+  --border-subtle: #1E2E4A;
+  --border-strong: #3D4F6F;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-primary: var(--color-primary);
+    --color-secondary: var(--color-secondary);
+    --color-accent: var(--color-accent);
+  }
+  @layer base {
+    body { background: var(--bg-primary); color: var(--fg-primary); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+
+      /* Trademark logo gradients */
+      .tm-gradient-blue { background: linear-gradient(135deg, #2E6BFF, #8EAFFF); }
+      .tm-gradient-teal { background: linear-gradient(135deg, #00C9A7, #6AD9BA); }
+      .tm-gradient-orange { background: linear-gradient(135deg, #FF6B35, #FFB088); }
+      .tm-gradient-purple { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+      .tm-gradient-pink { background: linear-gradient(135deg, #EC4899, #F9A8D4); }
+      .tm-gradient-indigo { background: linear-gradient(135deg, #4F46E5, #818CF8); }
+      .tm-gradient-cyan { background: linear-gradient(135deg, #06B6D4, #67E8F9); }
+      .tm-gradient-amber { background: linear-gradient(135deg, #F59E0B, #FCD34D); }
+
+      /* Category pill active gradient */
+      .cat-pill-active {
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        color: white;
+        border-color: transparent;
+      }
+
+      /* Search hero subtle bg */
+      .search-hero-bg {
+        background: radial-gradient(ellipse at center top, var(--color-primary-50) 0%, var(--bg-primary) 70%);
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased" style="background: var(--bg-primary); color: var(--fg-primary);">
+
+    <!-- ==================== 1. Sticky Nav ==================== -->
+    <nav class="sticky top-0 z-50 bg-white border-b" style="border-color: var(--border-default);">
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
+            <!-- Left: Logo + Brand -->
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold tm-gradient-blue flex-shrink-0">MB</div>
+                <span class="text-base font-semibold hidden sm:inline" style="color: var(--fg-primary);">脉搏跳动商标超市</span>
+            </a>
+
+            <!-- Center: Nav Links -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#" data-dom-id="nav-home" class="text-sm font-medium transition-colors duration-200" style="color: var(--fg-secondary);" onmouseover="this.style.color='var(--fg-primary)'" onmouseout="this.style.color='var(--fg-secondary)'">首页</a>
+                <a href="#" class="text-sm font-semibold transition-colors duration-200" style="color: var(--color-primary);">商标市场</a>
+                <a href="#" data-dom-id="nav-grid" class="text-sm font-medium transition-colors duration-200" style="color: var(--fg-secondary);" onmouseover="this.style.color='var(--fg-primary)'" onmouseout="this.style.color='var(--fg-secondary)'">九宫格工具</a>
+            </div>
+
+            <!-- Right: CTA -->
+            <button class="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-200" style="background: var(--color-primary);" onmouseover="this.style.background='var(--color-primary-hover)'" onmouseout="this.style.background='var(--color-primary)'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                微信登录
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ==================== 2. Smart Search Hero ==================== -->
+        <section class="search-hero-bg py-10 lg:py-14">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-6">
+                <div class="max-w-2xl mx-auto">
+                    <!-- Tab buttons row -->
+                    <div class="flex items-center justify-center gap-2 mb-4 flex-wrap">
+                        <button class="px-4 py-1.5 rounded-full text-sm font-medium text-white transition-all duration-200" style="background: var(--color-primary);">智能</button>
+                        <button class="px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">商标名</button>
+                        <button class="px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">注册号</button>
+
+                        <span class="mx-1" style="color: var(--border-strong);">|</span>
+
+                        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm border transition-all duration-200" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h15a3 3 0 1 1 0 6h-4"/><path d="m3 18 2-4"/><path d="M21 6l-2 4"/><path d="M3 6l9 6 9-6"/></svg>
+                            价格排序
+                        </button>
+                    </div>
+
+                    <!-- Search input bar -->
+                    <div class="relative flex items-center">
+                        <input type="text" placeholder="商标名/注册号/AI推荐" class="w-full h-12 lg:h-14 pl-5 pr-24 rounded-xl text-base border-2 outline-none transition-all duration-200" style="border-color: var(--color-primary); background: var(--bg-primary); color: var(--fg-primary);" onfocus="this.style.boxShadow='0 0 0 3px var(--color-primary-light)'" onblur="this.style.boxShadow='none'">
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 h-10 px-5 rounded-lg text-white text-sm font-medium transition-all duration-200" style="background: var(--color-primary);" onmouseover="this.style.background='var(--color-primary-hover)'" onmouseout="this.style.background='var(--color-primary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            搜索
+                        </button>
+                    </div>
+
+                    <!-- More options link -->
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-sm transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">更多选项</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. Category Filter Bar ==================== -->
+        <section class="border-b" style="border-color: var(--border-default); background: var(--bg-primary);">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-6 py-3">
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <button class="cat-pill-active whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300">全部分类</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">01类化学原料</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">03类日化用品</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">09类电子电器</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">25类服装鞋帽</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">35类广告销售</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">43类餐饮住宿</button>
+                    <button class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-300" style="color: var(--fg-secondary); border-color: var(--border-strong); background: var(--bg-primary);">44类医疗园艺</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. Selection Controls ==================== -->
+        <section class="max-w-[1200px] mx-auto px-4 lg:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded" style="accent-color: var(--color-primary);">
+                        <span class="text-sm" style="color: var(--fg-secondary);">已选 <strong style="color: var(--fg-primary);">0</strong> 项</span>
+                    </label>
+                    <a href="#" class="text-sm font-medium transition-colors duration-200" style="color: var(--color-primary);">全选</a>
+                </div>
+                <div class="text-sm" style="color: var(--fg-secondary);">
+                    共 <strong style="color: var(--fg-primary);">500+</strong> 件商标
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. Trademark Card Grid ==================== -->
+        <section class="max-w-[1200px] mx-auto px-4 lg:px-6 pb-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+
+                <!-- Card 1 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" data-dom-id="card-1" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <!-- Checkbox -->
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <!-- Heart + Arrow -->
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo + Content -->
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-blue flex items-center justify-center text-white text-2xl lg:text-3xl font-bold mb-3">驼</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">驼典</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">09类电子电器</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">10个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-secondary-light); color: var(--color-secondary);">同名1类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥7,400</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-teal flex items-center justify-center text-white text-2xl lg:text-3xl font-bold mb-3">兽</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">惊兽</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">25类服装鞋帽</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">8个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-accent-light); color: var(--color-accent);">同名4类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥6,499</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-purple flex items-center justify-center text-white text-xl lg:text-2xl font-bold mb-3">HIPUNA</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">HIPUNA</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">35类广告销售</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">12个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-secondary-light); color: var(--color-secondary);">同名2类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥8,200</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-orange flex items-center justify-center text-white text-xl lg:text-2xl font-bold mb-3">索</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">SUOSKILL 索巧</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">09类电子电器</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">15个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-accent-light); color: var(--color-accent);">同名3类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥5,800</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-indigo flex items-center justify-center text-white text-xl lg:text-2xl font-bold mb-3">卓</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">卓状元 ZUOSLEAD</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">43类餐饮住宿</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">6个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-secondary-light); color: var(--color-secondary);">同名1类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥9,500</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-pink flex items-center justify-center text-white text-2xl lg:text-3xl font-bold mb-3">龙</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">龙击科技</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">09类电子电器</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">11个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-accent-light); color: var(--color-accent);">同名4类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥7,400</div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-cyan flex items-center justify-center text-white text-2xl lg:text-3xl font-bold mb-3">企</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">企早早</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">35类广告销售</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">9个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-secondary-light); color: var(--color-secondary);">同名1类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥6,499</div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="relative bg-white rounded-xl border p-4 lg:p-5 transition-all duration-200 group cursor-pointer" style="border-color: var(--border-default);" onmouseover="this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--color-primary-200)'" onmouseout="this.style.boxShadow='var(--shadow-sm)'; this.style.borderColor='var(--border-default)'">
+                    <label class="absolute top-3 left-3 lg:top-4 lg:left-4 cursor-pointer z-10">
+                        <input type="checkbox" class="w-3.5 h-3.5 rounded" style="accent-color: var(--color-primary);">
+                    </label>
+                    <div class="absolute top-3 right-3 lg:top-4 lg:right-4 flex items-center gap-1.5">
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                        <button class="p-1 transition-colors duration-200" style="color: var(--fg-tertiary);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--fg-tertiary)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col items-center pt-4 lg:pt-5">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full tm-gradient-amber flex items-center justify-center text-white text-2xl lg:text-3xl font-bold mb-3">星</div>
+                        <h3 class="text-base lg:text-lg font-bold mb-2" style="color: var(--fg-primary);">星盒季</h3>
+                        <div class="flex items-center gap-2 mb-2 flex-wrap justify-center">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-primary-light); color: var(--color-primary);">25类服装鞋帽</span>
+                            <span class="text-xs" style="color: var(--fg-tertiary);">7个小项</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded-md text-xs font-medium" style="background: var(--color-secondary-light); color: var(--color-secondary);">同名2类</span>
+                        </div>
+                        <div class="text-lg lg:text-xl font-bold" style="color: var(--color-accent);">¥7,400</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 6. Pagination ==================== -->
+        <section class="max-w-[1200px] mx-auto px-4 lg:px-6 pb-12">
+            <div class="flex items-center justify-center gap-2 flex-wrap">
+                <!-- Prev -->
+                <button class="px-3 py-1.5 rounded-lg text-sm border cursor-not-allowed opacity-50" style="border-color: var(--border-strong); background: var(--bg-primary); color: var(--fg-tertiary);">
+                    上一页
+                </button>
+
+                <!-- Page numbers -->
+                <button class="w-9 h-9 rounded-lg text-sm font-medium text-white" style="background: var(--color-primary);">1</button>
+                <button class="w-9 h-9 rounded-lg text-sm font-medium border transition-colors duration-200" style="background: var(--bg-primary); color: var(--fg-secondary); border-color: var(--border-strong);" onmouseover="this.style.borderColor='var(--color-primary)'; this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-strong)'; this.style.color='var(--fg-secondary)'">2</button>
+                <button class="w-9 h-9 rounded-lg text-sm font-medium border transition-colors duration-200" style="background: var(--bg-primary); color: var(--fg-secondary); border-color: var(--border-strong);" onmouseover="this.style.borderColor='var(--color-primary)'; this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-strong)'; this.style.color='var(--fg-secondary)'">3</button>
+                <span class="px-1 text-sm" style="color: var(--fg-tertiary);">...</span>
+                <button class="w-9 h-9 rounded-lg text-sm font-medium border transition-colors duration-200" style="background: var(--bg-primary); color: var(--fg-secondary); border-color: var(--border-strong);" onmouseover="this.style.borderColor='var(--color-primary)'; this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-strong)'; this.style.color='var(--fg-secondary)'">20</button>
+
+                <!-- Next -->
+                <button class="px-3 py-1.5 rounded-lg text-sm font-medium text-white transition-all duration-200" style="background: var(--color-primary);" onmouseover="this.style.background='var(--color-primary-hover)'" onmouseout="this.style.background='var(--color-primary)'">
+                    下一页
+                </button>
+
+                <!-- Per-page selector -->
+                <div class="ml-4 flex items-center gap-1.5">
+                    <span class="text-sm" style="color: var(--fg-secondary);">每页</span>
+                    <select class="px-2 py-1 rounded-lg text-sm border outline-none cursor-pointer" style="border-color: var(--border-strong); background: var(--bg-primary); color: var(--fg-primary);">
+                        <option>20/页</option>
+                        <option selected>100/页</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== 7. Footer ==================== -->
+    <footer class="border-t" style="border-color: var(--border-default); background: var(--color-gray-900);">
+        <!-- Main footer content -->
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-6 py-12 lg:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <!-- Column 1: Logo & Description -->
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold tm-gradient-blue">MB</div>
+                        <span class="text-base font-semibold text-white">脉搏跳动商标超市</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4" style="color: var(--color-gray-400);">专注商标交易与服务，为企业和个人提供优质的商标转让、注册与查询服务。</p>
+                </div>
+
+                <!-- Column 2: 快速链接 -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">快速链接</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" data-dom-id="footer-home" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">首页</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">商标市场</a></li>
+                        <li><a href="#" data-dom-id="footer-grid" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">九宫格工具</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: 其他服务 -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">其他服务</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">商标注册</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">商标查询</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">商标转让</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: var(--color-gray-400);" onmouseover="this.style.color='var(--color-white)'" onmouseout="this.style.color='var(--color-gray-400)'">帮助中心</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: 联系我们 -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">联系我们</h4>
+                    <ul class="space-y-2.5">
+                        <li class="text-sm" style="color: var(--color-gray-400);">客服微信：maibo_tm</li>
+                        <li class="text-sm" style="color: var(--color-gray-400);">服务热线：400-888-0000</li>
+                        <li class="text-sm" style="color: var(--color-gray-400);">工作时间：周一至周五 9:00-18:00</li>
+                    </ul>
+                    <!-- QR code placeholder -->
+                    <div class="mt-4 flex gap-3">
+                        <div class="w-16 h-16 rounded-lg border flex items-center justify-center" style="border-color: var(--color-gray-600); background: var(--color-gray-800);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gray-400);"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+                        </div>
+                        <div class="w-16 h-16 rounded-lg border flex items-center justify-center" style="border-color: var(--color-gray-600); background: var(--color-gray-800);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-gray-400);"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="border-t" style="border-color: var(--color-gray-700);">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <p class="text-xs" style="color: var(--color-gray-500);">&copy; 2024 脉搏跳动商标超市 版权所有</p>
+                <p class="text-xs" style="color: var(--color-gray-500);">京ICP备2024XXXXXXXX号-1 | 京公网安备 11010XXXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

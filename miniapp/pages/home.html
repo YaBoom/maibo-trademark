@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脉搏跳动商标超市 - 首页</title>
+    <style id="theme-vars">
+:root {
+  /* ── Brand Palette ── */
+  --color-primary: #2E6BFF;
+  --color-primary-hover: #1A56E0;
+  --color-primary-light: #E8F0FE;
+  --color-primary-subtle: #F0F5FF;
+
+  --color-secondary: #00C9A7;
+  --color-secondary-hover: #00B396;
+  --color-secondary-light: #E0FAF4;
+
+  --color-accent: #FF6B35;
+  --color-accent-hover: #E55A28;
+  --color-accent-light: #FFF0E8;
+
+  /* ── Tint Scales (Primary) ── */
+  --color-primary-50: #EFF4FF;
+  --color-primary-100: #D9E5FF;
+  --color-primary-200: #BCCCFF;
+  --color-primary-300: #8EAFFF;
+  --color-primary-400: #5989FF;
+  --color-primary-500: #2E6BFF;
+  --color-primary-600: #1A56E0;
+  --color-primary-700: #1344B8;
+  --color-primary-800: #0F3690;
+  --color-primary-900: #0B255F;
+
+  /* ── Tint Scales (Secondary/Teal) ── */
+  --color-teal-50: #EEFBF6;
+  --color-teal-100: #D0F5E8;
+  --color-teal-200: #A4EAD4;
+  --color-teal-300: #6AD9BA;
+  --color-teal-400: #00C9A7;
+  --color-teal-500: #00B396;
+  --color-teal-600: #009A7F;
+  --color-teal-700: #007D67;
+  --color-teal-800: #006454;
+  --color-teal-900: #004D40;
+
+  /* ── Neutrals ── */
+  --color-white: #FFFFFF;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+
+  /* ── Semantic (State) ── */
+  --state-success: #10B981;
+  --state-warning: #F59E0B;
+  --state-error: #EF4444;
+
+  /* ── Risk Colors ── */
+  --risk-low: #10B981;
+  --risk-medium: #F59E0B;
+  --risk-high: #EF4444;
+
+  /* ── Semantic (Background) ── */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-tertiary: var(--color-gray-100);
+
+  /* ── Semantic (Foreground) ── */
+  --fg-primary: var(--color-gray-900);
+  --fg-secondary: var(--color-gray-600);
+  --fg-tertiary: var(--color-gray-400);
+  --fg-inverse: var(--color-white);
+  --fg-brand: var(--color-primary);
+
+  /* ── Semantic (Border) ── */
+  --border-default: var(--color-gray-200);
+  --border-subtle: var(--color-gray-100);
+
+  /* ── Typography (mobile optimized) ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.75rem;
+  --text-base: 0.8125rem;
+  --text-lg: 0.9375rem;
+  --text-xl: 1.0625rem;
+  --text-2xl: 1.25rem;
+  --text-3xl: 1.5rem;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
+
+  /* ── Phone Frame ── */
+  --phone-width: 375px;
+  --tab-bar-height: 50px;
+  --status-bar-height: 44px;
+  --safe-bottom: 34px;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-primary: var(--color-primary);
+    --color-secondary: var(--color-secondary);
+    --color-accent: var(--color-accent);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+  }
+  @layer base {
+    body { background: #E5E7EB; color: var(--fg-primary); margin: 0; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Phone frame centered on page */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 0;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .phone-frame {
+        width: 375px;
+        height: 812px;
+        border-radius: 40px;
+        overflow: hidden;
+        background: var(--bg-primary);
+        box-shadow: 0 0 0 10px #1F2937, 0 0 0 12px #4B5563, 0 20px 60px rgba(0,0,0,0.3);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Status bar */
+      .status-bar {
+        height: var(--status-bar-height);
+        background: var(--bg-primary);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 24px 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-gray-900);
+        flex-shrink: 0;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      /* Scrollable content area */
+      .phone-content {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: calc(var(--tab-bar-height) + var(--safe-bottom));
+      }
+
+      .phone-content::-webkit-scrollbar { display: none; }
+      .phone-content { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Tab bar */
+      .tab-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: calc(var(--tab-bar-height) + var(--safe-bottom));
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-default);
+        display: flex;
+        align-items: flex-start;
+        padding-top: 6px;
+        padding-bottom: var(--safe-bottom);
+        z-index: 50;
+      }
+
+      .tab-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        cursor: pointer;
+        min-height: 44px;
+        justify-content: center;
+      }
+      .tab-item.active { color: var(--color-primary); }
+      .tab-item:not(.active) { color: var(--color-gray-400); }
+      .tab-item svg { width: 22px; height: 22px; }
+      .tab-item span { font-size: 10px; }
+
+      /* Horizontal scroll snap */
+      .scroll-snap-x {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .scroll-snap-x::-webkit-scrollbar { display: none; }
+      .scroll-snap-x { -ms-overflow-style: none; scrollbar-width: none; }
+      .scroll-snap-x > * { scroll-snap-align: start; flex-shrink: 0; }
+
+      /* Category pills */
+      .category-scroll {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 0 16px;
+      }
+      .category-scroll::-webkit-scrollbar { display: none; }
+      .category-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+      .category-pill {
+        white-space: nowrap;
+        padding: 6px 14px;
+        border-radius: var(--radius-full);
+        font-size: 12px;
+        cursor: pointer;
+        background: var(--color-gray-100);
+        color: var(--color-gray-600);
+        border: none;
+        flex-shrink: 0;
+      }
+      .category-pill.active {
+        background: var(--color-primary);
+        color: var(--color-white);
+      }
+
+      /* Recommend card grid */
+      .recommend-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 16px;
+      }
+
+      /* Deal cards horizontal scroll */
+      .deal-card {
+        width: 200px;
+        flex-shrink: 0;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <!-- Phone Frame -->
+  <div class="phone-frame">
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>10:05</span>
+      <div style="display:flex; align-items:center; gap:5px;">
+        <!-- Signal -->
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor">
+          <rect x="0" y="8" width="3" height="4" rx="0.5"/>
+          <rect x="4" y="5" width="3" height="7" rx="0.5"/>
+          <rect x="8" y="2" width="3" height="10" rx="0.5"/>
+          <rect x="12" y="0" width="3" height="12" rx="0.5"/>
+        </svg>
+        <!-- WiFi -->
+        <svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor">
+          <path d="M7.5 10.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM3.6 8.1a5.3 5.3 0 017.8 0l-1 1a3.8 3.8 0 00-5.8 0l-1-1zM1.4 5.9a8.5 8.5 0 0112.2 0l-1 1a7 7 0 00-10.2 0l-1-1z"/>
+        </svg>
+        <!-- Battery -->
+        <svg width="24" height="12" viewBox="0 0 24 12" fill="currentColor">
+          <rect x="0" y="1" width="20" height="10" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+          <rect x="2" y="3" width="14" height="6" rx="1" fill="currentColor"/>
+          <rect x="21" y="4" width="2" height="4" rx="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="phone-content">
+
+      <!-- Top Area: App Name + Notification -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 16px 10px;">
+        <div style="font-size:18px; font-weight:700; color:var(--color-primary);">
+          <span style="color:var(--color-gray-900);">脉搏</span>跳动
+        </div>
+        <!-- Notification Bell -->
+        <div style="position:relative; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <!-- Red dot -->
+          <div style="position:absolute; top:6px; right:6px; width:7px; height:7px; background:var(--state-error); border-radius:50%; border:1.5px solid var(--bg-primary);"></div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div data-dom-id="search-bar" style="padding:0 16px 14px;">
+        <div style="display:flex; align-items:center; background:var(--color-gray-100); border-radius:var(--radius-full); padding:10px 14px; gap:8px;">
+          <!-- Search Icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span style="font-size:13px; color:var(--color-gray-400); flex:1;">搜索商标名/行业/注册号</span>
+          <!-- AI Sparkle -->
+          <div style="width:28px; height:28px; background:linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius:var(--radius-full); display:flex; align-items:center; justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-white)">
+              <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner Carousel -->
+      <div style="padding:0 16px 16px;">
+        <div data-dom-id="ai-entry" style="background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); border-radius:var(--radius-lg); padding:24px 20px; position:relative; overflow:hidden; cursor:pointer;">
+          <!-- Decorative circles -->
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(255,255,255,0.1);"></div>
+          <div style="position:absolute; bottom:-30px; right:40px; width:70px; height:70px; border-radius:50%; background:rgba(255,255,255,0.08);"></div>
+          <div style="font-size:22px; font-weight:700; color:var(--color-white); margin-bottom:6px; line-height:1.3;">
+            AI 3秒帮你选商标
+          </div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.85); margin-bottom:16px; line-height:1.4;">
+            描述你的需求，智能匹配最合适的商标
+          </div>
+          <div style="display:inline-flex; background:var(--color-white); color:var(--color-primary); padding:8px 24px; border-radius:var(--radius-full); font-size:13px; font-weight:600; cursor:pointer;">
+            立即体验
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene Quick Entry - 2x2 Grid -->
+      <div style="padding:0 16px 18px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <!-- Card 1: 电商入驻 -->
+          <div data-dom-id="scene-ecommerce" style="background:var(--bg-primary); border-radius:var(--radius-md); padding:16px 12px; display:flex; align-items:center; gap:10px; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--color-accent-light); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900);">电商入驻</div>
+              <div style="font-size:10px; color:var(--color-gray-400); margin-top:1px;">天猫/京东/拼多多</div>
+            </div>
+          </div>
+          <!-- Card 2: 餐饮开店 -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-md); padding:16px 12px; display:flex; align-items:center; gap:10px; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--color-secondary-light); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                <path d="M7 2v20"/>
+                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900);">餐饮开店</div>
+              <div style="font-size:10px; color:var(--color-gray-400); margin-top:1px;">奶茶/火锅/快餐</div>
+            </div>
+          </div>
+          <!-- Card 3: 品牌升级 -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-md); padding:16px 12px; display:flex; align-items:center; gap:10px; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--color-primary-light); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                <line x1="7" y1="7" x2="7.01" y2="7"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900);">品牌升级</div>
+              <div style="font-size:10px; color:var(--color-gray-400); margin-top:1px;">爆款标/组合标</div>
+            </div>
+          </div>
+          <!-- Card 4: 商标猎头 -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-md); padding:16px 12px; display:flex; align-items:center; gap:10px; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:40px; height:40px; border-radius:50%; background:#F0E8FF; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900);">商标猎头</div>
+              <div style="font-size:10px; color:var(--color-gray-400); margin-top:1px;">帮我找标</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: 为你推荐 -->
+      <div style="padding:0 0 16px;">
+        <!-- Section Header -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0 16px; margin-bottom:12px;">
+          <div style="display:flex; align-items:center; gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-primary)" stroke="none">
+              <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z"/>
+            </svg>
+            <span style="font-size:15px; font-weight:700; color:var(--color-gray-900);">为你推荐</span>
+            <span style="font-size:10px; color:var(--color-primary); background:var(--color-primary-light); padding:1px 6px; border-radius:var(--radius-full); font-weight:500;">AI</span>
+          </div>
+          <span style="font-size:12px; color:var(--color-gray-500); cursor:pointer;">换一批 ›</span>
+        </div>
+
+        <!-- 2-column card grid -->
+        <div class="recommend-grid">
+          <!-- Card 1: 驼典 -->
+          <div data-dom-id="card-recommend-1" style="background:var(--bg-primary); border-radius:var(--radius-lg); padding:14px; box-shadow:var(--shadow-sm); cursor:pointer; position:relative;">
+            <!-- Heart icon -->
+            <div style="position:absolute; top:10px; right:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <!-- Logo Initial -->
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:linear-gradient(135deg, var(--color-primary), #6366F1); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <span style="font-size:20px; font-weight:700; color:var(--color-white);">驼</span>
+            </div>
+            <div style="font-size:14px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">驼典</div>
+            <div style="display:inline-block; background:var(--color-primary-light); color:var(--color-primary); font-size:10px; padding:2px 8px; border-radius:var(--radius-full); margin-bottom:8px;">09类 电子电器</div>
+            <div style="font-size:16px; font-weight:700; color:var(--state-error);">¥7,400</div>
+          </div>
+
+          <!-- Card 2: HIPUNA -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-lg); padding:14px; box-shadow:var(--shadow-sm); cursor:pointer; position:relative;">
+            <div style="position:absolute; top:10px; right:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:linear-gradient(135deg, var(--color-secondary), #06B6D4); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <span style="font-size:12px; font-weight:700; color:var(--color-white);">HP</span>
+            </div>
+            <div style="font-size:14px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">HIPUNA</div>
+            <div style="display:inline-block; background:var(--color-primary-light); color:var(--color-primary); font-size:10px; padding:2px 8px; border-radius:var(--radius-full); margin-bottom:8px;">09类</div>
+            <div style="font-size:16px; font-weight:700; color:var(--state-error);">¥7,400</div>
+          </div>
+
+          <!-- Card 3: 卓状元 -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-lg); padding:14px; box-shadow:var(--shadow-sm); cursor:pointer; position:relative;">
+            <div style="position:absolute; top:10px; right:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:linear-gradient(135deg, var(--color-accent), #F59E0B); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <span style="font-size:20px; font-weight:700; color:var(--color-white);">卓</span>
+            </div>
+            <div style="font-size:14px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">卓状元</div>
+            <div style="display:inline-block; background:var(--color-primary-light); color:var(--color-primary); font-size:10px; padding:2px 8px; border-radius:var(--radius-full); margin-bottom:8px;">09类</div>
+            <div style="font-size:16px; font-weight:700; color:var(--state-error);">¥6,499</div>
+          </div>
+
+          <!-- Card 4: 星盒季 -->
+          <div style="background:var(--bg-primary); border-radius:var(--radius-lg); padding:14px; box-shadow:var(--shadow-sm); cursor:pointer; position:relative;">
+            <div style="position:absolute; top:10px; right:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:linear-gradient(135deg, #8B5CF6, #EC4899); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <span style="font-size:20px; font-weight:700; color:var(--color-white);">星</span>
+            </div>
+            <div style="font-size:14px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">星盒季</div>
+            <div style="display:inline-block; background:var(--color-secondary-light); color:var(--color-secondary-hover); font-size:10px; padding:2px 8px; border-radius:var(--radius-full); margin-bottom:8px;">43类 餐饮</div>
+            <div style="font-size:16px; font-weight:700; color:var(--state-error);">¥6,499</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: 热门分类 -->
+      <div style="padding:0 0 16px;">
+        <div style="padding:0 16px; margin-bottom:10px;">
+          <span style="font-size:15px; font-weight:700; color:var(--color-gray-900);">热门分类</span>
+        </div>
+        <div class="category-scroll no-scrollbar">
+          <button class="category-pill active">全部</button>
+          <button class="category-pill">电商专用</button>
+          <button class="category-pill">餐饮食品</button>
+          <button class="category-pill">科技数码</button>
+          <button class="category-pill">服装鞋帽</button>
+          <button class="category-pill">美妆护肤</button>
+          <button class="category-pill">教育培训</button>
+        </div>
+      </div>
+
+      <!-- Section: 精选特价 -->
+      <div style="padding:0 0 18px;">
+        <!-- Section Header -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0 16px; margin-bottom:12px;">
+          <div style="display:flex; align-items:center; gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-accent)" stroke="none">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <span style="font-size:15px; font-weight:700; color:var(--color-gray-900);">精选特价</span>
+          </div>
+          <span style="font-size:12px; color:var(--color-gray-500); cursor:pointer;">查看全部 ›</span>
+        </div>
+
+        <!-- Horizontal scroll cards -->
+        <div class="scroll-snap-x no-scrollbar" style="padding:0 16px; gap:10px;">
+          <!-- Deal Card 1 -->
+          <div class="deal-card" style="background:var(--bg-primary); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:200px; height:120px; background:linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light)); display:flex; align-items:center; justify-content:center; position:relative;">
+              <span style="font-size:28px; font-weight:700; color:var(--color-primary);">铭</span>
+              <div style="position:absolute; top:8px; left:8px; background:var(--state-error); color:var(--color-white); font-size:10px; padding:2px 6px; border-radius:4px; font-weight:600;">特价</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">铭尚优品</div>
+              <div style="display:flex; align-items:baseline; gap:6px;">
+                <span style="font-size:16px; font-weight:700; color:var(--state-error);">¥3,999</span>
+                <span style="font-size:11px; color:var(--color-gray-400); text-decoration:line-through;">¥5,800</span>
+              </div>
+              <div style="margin-top:6px;">
+                <span style="font-size:10px; color:var(--color-accent); background:var(--color-accent-light); padding:2px 6px; border-radius:4px;">天猫可用</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal Card 2 -->
+          <div class="deal-card" style="background:var(--bg-primary); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:200px; height:120px; background:linear-gradient(135deg, var(--color-accent-light), #FEF3C7); display:flex; align-items:center; justify-content:center; position:relative;">
+              <span style="font-size:28px; font-weight:700; color:var(--color-accent);">优</span>
+              <div style="position:absolute; top:8px; left:8px; background:var(--state-error); color:var(--color-white); font-size:10px; padding:2px 6px; border-radius:4px; font-weight:600;">特价</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">优立达</div>
+              <div style="display:flex; align-items:baseline; gap:6px;">
+                <span style="font-size:16px; font-weight:700; color:var(--state-error);">¥2,899</span>
+                <span style="font-size:11px; color:var(--color-gray-400); text-decoration:line-through;">¥4,500</span>
+              </div>
+              <div style="margin-top:6px;">
+                <span style="font-size:10px; color:var(--color-accent); background:var(--color-accent-light); padding:2px 6px; border-radius:4px;">天猫可用</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal Card 3 -->
+          <div class="deal-card" style="background:var(--bg-primary); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:200px; height:120px; background:linear-gradient(135deg, #F0E8FF, #EDE9FE); display:flex; align-items:center; justify-content:center; position:relative;">
+              <span style="font-size:28px; font-weight:700; color:#7C3AED;">锐</span>
+              <div style="position:absolute; top:8px; left:8px; background:var(--state-error); color:var(--color-white); font-size:10px; padding:2px 6px; border-radius:4px; font-weight:600;">特价</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">锐行天下</div>
+              <div style="display:flex; align-items:baseline; gap:6px;">
+                <span style="font-size:16px; font-weight:700; color:var(--state-error);">¥4,200</span>
+                <span style="font-size:11px; color:var(--color-gray-400); text-decoration:line-through;">¥6,800</span>
+              </div>
+              <div style="margin-top:6px;">
+                <span style="font-size:10px; color:var(--color-primary); background:var(--color-primary-light); padding:2px 6px; border-radius:4px;">京东可用</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deal Card 4 -->
+          <div class="deal-card" style="background:var(--bg-primary); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); cursor:pointer;">
+            <div style="width:200px; height:120px; background:linear-gradient(135deg, var(--color-secondary-light), var(--color-teal-100)); display:flex; align-items:center; justify-content:center; position:relative;">
+              <span style="font-size:28px; font-weight:700; color:var(--color-secondary);">源</span>
+              <div style="position:absolute; top:8px; left:8px; background:var(--state-error); color:var(--color-white); font-size:10px; padding:2px 6px; border-radius:4px; font-weight:600;">特价</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-size:13px; font-weight:600; color:var(--color-gray-900); margin-bottom:4px;">源味小镇</div>
+              <div style="display:flex; align-items:baseline; gap:6px;">
+                <span style="font-size:16px; font-weight:700; color:var(--state-error);">¥3,599</span>
+                <span style="font-size:11px; color:var(--color-gray-400); text-decoration:line-through;">¥5,200</span>
+              </div>
+              <div style="margin-top:6px;">
+                <span style="font-size:10px; color:var(--color-accent); background:var(--color-accent-light); padding:2px 6px; border-radius:4px;">天猫可用</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Bar -->
+      <div style="padding:16px; background:var(--bg-primary); border-top:1px solid var(--border-subtle); margin:0 16px 8px; border-radius:var(--radius-md);">
+        <div style="display:flex; align-items:center; justify-content:space-around;">
+          <!-- Trust item 1 -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span style="font-size:10px; color:var(--color-gray-500); font-weight:500;">10000+ 精选商标</span>
+          </div>
+          <!-- Trust item 2 -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            <span style="font-size:10px; color:var(--color-gray-500); font-weight:500;">明码标价</span>
+          </div>
+          <!-- Trust item 3 -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gray-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span style="font-size:10px; color:var(--color-gray-500); font-weight:500;">48h极速转让</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end phone-content -->
+
+    <!-- Bottom Tab Bar -->
+    <div class="tab-bar">
+      <!-- Tab 1: 首页 (active) -->
+      <div class="tab-item active">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22" stroke="var(--color-primary)" stroke-width="1" fill="none"/>
+        </svg>
+        <span style="font-weight:600;">首页</span>
+      </div>
+      <!-- Tab 2: 商标市场 -->
+      <div class="tab-item" data-dom-id="tab-market">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>商标市场</span>
+      </div>
+      <!-- Tab 3: AI选标 -->
+      <div class="tab-item" data-dom-id="tab-service">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z"/>
+        </svg>
+        <span>AI选标</span>
+      </div>
+      <!-- Tab 4: 我的 -->
+      <div class="tab-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span>我的</span>
+      </div>
+    </div>
+
+  </div><!-- end phone-frame -->
+
+</body>
+</html>
