@@ -1,1 +1,9 @@
-﻿.design\n*.design\norchestration-summary.json\nnode_modules/
+﻿.design
+*.design
+orchestration-summary.json
+node_modules/
+.next/
+out/
+.env*
+*.tsbuildinfo
+next-env.d.ts
